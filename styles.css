@@ -174,33 +174,37 @@ body.menu-open { overflow: hidden; }
 .icon-link { padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); font-size: .9rem; opacity: .85; }
 .icon-link:hover { opacity: 1; }
 
-.hero-art { position: relative; height: 260px; }
+.hero-art { position: relative; height: 260px; display: grid; place-items: center; }
 .blob {
-  position: absolute; inset: 0; filter: blur(30px); border-radius: 24px; opacity: .7;
-  background: conic-gradient(from 180deg, #7c5cff, #00d4ff, #22c55e, #7c5cff);
-  animation: float 10s linear infinite;
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: clamp(220px, 44vw, 420px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--primary) 35%, transparent) 0%, transparent 65%),
+              conic-gradient(from 0deg, rgba(124,92,255,.25), rgba(0,212,255,.18), rgba(34,197,94,.18), rgba(124,92,255,.25));
+  filter: blur(22px) saturate(120%);
+  opacity: .8;
+  animation: glow 8s ease-in-out infinite;
 }
 .avatar { position: absolute; inset: 40px; display: grid; place-items: center; font-weight: 800; font-size: 3rem; background: var(--card); border: 2px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
 /* New hero image styling */
 .hero-img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 80px);
-  height: calc(100% - 80px);
-  max-width: clamp(200px, 40vw, 360px);
-  max-height: clamp(200px, 40vw, 360px);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: clamp(200px, 40vw, 360px);
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--border);
   box-shadow: var(--shadow);
 }
 
-@keyframes float {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.03); }
-  100% { transform: rotate(360deg) scale(1); }
+@keyframes glow {
+  0%   { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: .75; }
+  50%  { transform: translate(-50%, -50%) scale(1.04) rotate(180deg); opacity: .9; }
+  100% { transform: translate(-50%, -50%) scale(1) rotate(360deg); opacity: .75; }
 }
 
 .section { padding: 56px 20px; }
@@ -234,7 +238,7 @@ body.menu-open { overflow: hidden; }
     padding: 80px 20px 40px;
     min-height: 70vh;
   }
-  .hero-art { height: 320px; }
+  .hero-art { height: 360px; }
 }
 
 /* Desktop and large screens */
@@ -253,6 +257,12 @@ body.menu-open { overflow: hidden; }
 
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .chips li { padding: 10px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); }
+
+/* Skills categories layout */
+.skills-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+.skill-group h3 { margin: 0 0 10px; font-size: 1.05rem; color: var(--muted); }
+@media (min-width: 720px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .skills-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .cards .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
 .card-media { height: 140px; background: #10131a; overflow: hidden; }
