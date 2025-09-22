@@ -45,8 +45,12 @@
   // Header shadow when scrolled
   const onScroll = () => {
     if (!header) return;
-    if (window.scrollY > 10) header.classList.add('scrolled');
+    const y = window.scrollY;
+    if (y > 10) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+    // Compact header
+    if (y > 80) header.classList.add('compact');
+    else header.classList.remove('compact');
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -119,9 +123,27 @@
     history.pushState(null, '', '#top');
   });
 
-  // Reveal-on-scroll animation using IntersectionObserver
+  // Contact success handler (for FormSubmit redirect)
+  (function handleContactSuccess() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === '1') {
+      const success = document.getElementById('contactSuccess');
+      if (success) {
+        success.hidden = false;
+        success.classList.add('show');
+      }
+      const contact = document.getElementById('contact');
+      if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Clean the URL
+      params.delete('submitted');
+      const newUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash || '#contact'}`;
+      history.replaceState(null, '', newUrl);
+    }
+  })();
+
+  // Reveal-on-scroll animations with staggering
   const revealTargets = [
-    '.hero-text', '.hero-art', '.section', '.card', '.timeline-item'
+    '.hero-text', '.hero-art', '.section', '.card', '.timeline-item', '.chips li'
   ];
   const elements = document.querySelectorAll(revealTargets.join(','));
   elements.forEach((el) => el.classList.add('reveal'));
@@ -129,11 +151,40 @@
   const io = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        io.unobserve(entry.target);
+        const target = entry.target;
+        // Stagger children within common containers
+        if (target.matches('.cards, .chips, .timeline')) {
+          [...target.children].forEach((child, idx) => {
+            child.style.transitionDelay = `${Math.min(idx * 60, 360)}ms`;
+            child.classList.add('show');
+          });
+        } else {
+          target.classList.add('show');
+        }
+        io.unobserve(target);
       }
     }
   }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
 
-  elements.forEach((el) => io.observe(el));
+  // Observe sections and lists for staggered entry
+  document.querySelectorAll('.section, .cards, .timeline, .chips').forEach((el) => io.observe(el));
+  // Also observe hero
+  document.querySelectorAll('.hero-text, .hero-art').forEach((el) => io.observe(el));
+
+  // Scrollspy: highlight active nav link
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute('id');
+      if (!id) return;
+      const link = navLinks.find((a) => a.getAttribute('href') === `#${id}`);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navLinks.forEach((a) => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.05 });
+  sections.forEach((sec) => spy.observe(sec));
 })();

@@ -342,7 +342,14 @@
               <li><strong>GitHub:</strong> <a href="https://github.com/lovewanshik2000" target="_blank" rel="noopener">lovewanshik2000</a></li>
             </ul>
           </div>
-          <form class="contact-form" action="mailto:kamleshlovewanshi2025@gmail.com" method="post" enctype="text/plain">
+          <form class="contact-form" action="https://formsubmit.co/kamleshlovewanshi2025@gmail.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New portfolio inquiry from kamleshlovewanshi.dev" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://lovewanshik2000.github.io/my_portfolio/?submitted=1#contact" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I received your message and will get back to you soon." />
             <div class="form-field">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" placeholder="Your name" required />
@@ -357,6 +364,7 @@
             </div>
             <button class="btn primary" type="submit">Send</button>
           </form>
+          <p id="contactSuccess" class="contact-success" hidden>Thank you! Your message has been sent.</p>
         </div>
       </section>
     </main>
