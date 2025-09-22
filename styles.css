@@ -265,8 +265,8 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 980px) { .skills-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .cards .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
-.card-media { height: 140px; background: #10131a; overflow: hidden; }
-.card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-media { height: 140px; background: var(--surface); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.card-media img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; }
 .card-media.gradient { background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(0,212,255,.18)); }
 .card-body { padding: 16px; flex: 1; }
 .card-body h3 { margin: 0 0 8px; font-size: 1.15rem; }
