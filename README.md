@@ -69,7 +69,7 @@ There are two ways to deploy:
 2. Push this folder to the repo's `main` branch.
 3. In GitHub: Settings → Pages → Build and deployment → Source: `Deploy from a branch`.
 4. Select Branch: `main` and Folder: `/ (root)` → Save.
-5. Your site will be available at: `https://lovewanshik2000.github.io/personal-website/`.
+5. Your site will be available at: `https://lovewanshik2000.github.io/my_portfolio/`.
 
 ### Option B — User site (root domain)
 1. Create a repo named exactly: `lovewanshik2000.github.io`.
@@ -88,7 +88,7 @@ git commit -m "feat: initial portfolio website"
 
 # Add your GitHub remote (replace with your repo URL)
 # Example: git remote add origin https://github.com/lovewanshik2000/personal-website.git
-git remote add origin <YOUR_REPO_URL>
+git remote add origin https://github.com/lovewanshik2000/my_portfolio.git
 
 git push -u origin main
 ```
@@ -112,12 +112,12 @@ Thank you for visiting my portfolio! Feel free to connect for collaboration or o
 2. Push this folder to the repo's `main` branch.
 3. In GitHub: Settings → Pages → Build and deployment → Source: `Deploy from a branch`.
 4. Select Branch: `main` and Folder: `/ (root)` → Save.
-5. Your site will be available at: `https://<your-username>.github.io/personal-website/`.
+5. Your site will be available at: `https://lovewanshik2000.github.io/my_portfolio/`.
 
 ### Option B — User site (root domain)
-1. Create a repo named exactly: `<your-username>.github.io`.
+1. Create a repo named exactly: `https://lovewanshik2000.github.io/`.
 2. Push this folder to `main`.
-3. GitHub Pages will publish at `https://<your-username>.github.io/` automatically.
+3. GitHub Pages will publish at `https://lovewanshik2000.github.io/my_portfolio/` automatically.
 
 ## Commands (example)
 ```bash
