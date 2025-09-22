@@ -77,6 +77,14 @@
     });
   });
 
+  // Explicit handler for footer back-to-top arrow in case target element lookup fails
+  const toTop = document.querySelector('.to-top');
+  toTop?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState(null, '', '#top');
+  });
+
   // Reveal-on-scroll animation using IntersectionObserver
   const revealTargets = [
     '.hero-text', '.hero-art', '.section', '.card', '.timeline-item'

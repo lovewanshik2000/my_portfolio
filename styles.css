@@ -149,6 +149,8 @@ body:not(.light) .theme-toggle .moon { opacity: 1; }
   animation: float 10s linear infinite;
 }
 .avatar { position: absolute; inset: 40px; display: grid; place-items: center; font-weight: 800; font-size: 3rem; background: var(--card); border: 2px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
+/* New hero image styling */
+.hero-img { position: absolute; inset: 40px; width: calc(100% - 80px); height: calc(100% - 80px); object-fit: cover; border-radius: 24px; border: 2px solid var(--border); box-shadow: var(--shadow); }
 
 @keyframes float {
   0% { transform: rotate(0deg) scale(1); }
@@ -175,7 +177,8 @@ body:not(.light) .theme-toggle .moon { opacity: 1; }
 .chips li { padding: 10px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); }
 
 .cards .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
-.card-media { height: 140px; background: #10131a; }
+.card-media { height: 140px; background: #10131a; overflow: hidden; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card-media.gradient { background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(0,212,255,.18)); }
 .card-body { padding: 16px; flex: 1; }
 .card-body h3 { margin: 0 0 8px; font-size: 1.15rem; }
