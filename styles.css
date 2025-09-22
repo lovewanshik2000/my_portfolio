@@ -270,7 +270,7 @@ body.menu-open { overflow: hidden; }
 .card-media.gradient { background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(0,212,255,.18)); }
 .card-body { padding: 16px; flex: 1; }
 .card-body h3 { margin: 0 0 8px; font-size: 1.15rem; }
-.card-actions { display: flex; gap: 8px; padding: 16px; border-top: 1px solid var(--border); }
+.card-actions { display: flex; gap: 8px; padding: 16px; border-top: 1px solid var(--border); justify-content: space-between; align-items: center; }
 
 .timeline { position: relative; margin-left: 8px; }
 .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
