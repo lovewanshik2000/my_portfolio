@@ -124,9 +124,28 @@ body:not(.light) .theme-toggle .moon { opacity: 1; }
 }
 .mobile-menu a { padding: 12px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); }
 
+/* Backdrop overlay for mobile menu */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 30;
+}
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Lock body scroll when menu is open */
+body.menu-open { overflow: hidden; }
+
 @media (min-width: 900px) {
   .nav { display: flex; }
   .hamburger, .mobile-menu { display: none; }
+  .overlay { display: none; }
 }
 
 .hero {

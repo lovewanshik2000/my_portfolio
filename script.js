@@ -7,6 +7,10 @@
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const yearEl = document.getElementById('year');
+  // Create a backdrop overlay for the mobile menu
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  document.body.appendChild(overlay);
 
   // Set current year
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -39,11 +43,15 @@
   function openMenu() {
     mobileMenu?.removeAttribute('hidden');
     hamburger?.setAttribute('aria-expanded', 'true');
+    overlay.classList.add('show');
+    body.classList.add('menu-open');
     document.addEventListener('keydown', onKeydown);
   }
   function closeMenu() {
     mobileMenu?.setAttribute('hidden', '');
     hamburger?.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('show');
+    body.classList.remove('menu-open');
     document.removeEventListener('keydown', onKeydown);
   }
   function toggleMenu() {
@@ -57,6 +65,20 @@
   }
 
   hamburger?.addEventListener('click', toggleMenu);
+
+  // Close when clicking the overlay or clicking outside the menu
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!mobileMenu || mobileMenu.hasAttribute('hidden')) return;
+    if (mobileMenu.contains(target) || hamburger?.contains(target)) return;
+    closeMenu();
+  });
+
+  // Close menu if viewport resized to desktop nav
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 900) closeMenu();
+  });
 
   // Close mobile menu when clicking a link
   mobileMenu?.querySelectorAll('a').forEach((a) => {
