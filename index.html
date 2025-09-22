@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kamlesh Lovewanshi • Portfolio</title>
+    <meta name="description" content="Portfolio website of Kamlesh Lovewanshi with 3 years of experience. Projects, skills, and contact information." />
+
+    <meta property="og:title" content="Kamlesh Lovewanshi • Portfolio" />
+    <meta property="og:description" content="Explore my work, skills, and experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><rect width='256' height='256' rx='48' fill='%230a0a0a'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-size='130' font-family='Arial' fill='white'>K</text></svg>">
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header" id="top">
+      <a href="#top" class="logo" aria-label="Go to top">KL</a>
+      <nav class="nav" aria-label="Primary">
+        <button class="btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="sun">☀︎</span>
+          <span class="moon">☾</span>
+        </button>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact" class="btn primary">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav id="mobileMenu" class="mobile-menu" hidden>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact" class="btn primary">Contact</a>
+    </nav>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Kamlesh Lovewanshi</h1>
+          <p class="subtitle">Python Developer with ~3 years of experience designing, building, and deploying scalable web apps and REST APIs.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn outline">Get in Touch</a>
+          </div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/kamlesh-lovewanshi" aria-label="LinkedIn" title="LinkedIn" class="icon-link">LinkedIn</a>
+            <a href="https://github.com/lovewanshik2000" aria-label="GitHub" title="GitHub" class="icon-link">GitHub</a>
+            <a href="mailto:kamleshlovewanshi2025@gmail.com" aria-label="Email" title="Email" class="icon-link">Email</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="avatar">KL</div>
+        </div>
+      </section>
+
+      <section id="about" class="section container">
+        <div class="section-header">
+          <h2>About</h2>
+          <p>Who I am</p>
+        </div>
+        <div class="grid two">
+          <p>
+            Python Developer with almost 3 years in IT services and product development. I specialize in designing,
+            developing, and deploying scalable web applications and REST APIs using Python, Django/DRF, and FastAPI.
+            I enjoy building user-centric solutions with clean, maintainable code.
+          </p>
+          <p>
+            I’m proficient across databases (MySQL, PostgreSQL, MongoDB), cloud (AWS EC2, S3, Lambda, RDS), and DevOps tooling
+            (Docker, NGINX, Gunicorn, Jenkins, GitHub Actions). Enthusiastic about Machine Learning with hands-on projects in
+            sentiment analysis. Strong in problem-solving, collaboration, leadership, and continuous learning.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section container">
+        <div class="section-header">
+          <h2>Skills</h2>
+          <p>What I use</p>
+        </div>
+        <ul class="chips">
+          <li>Python</li>
+          <li>Django</li>
+          <li>Django REST Framework (DRF)</li>
+          <li>FastAPI</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Bootstrap</li>
+          <li>React.js</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Unit & Integration Testing</li>
+          <li>API Testing</li>
+          <li>AWS EC2</li>
+          <li>AWS S3</li>
+          <li>AWS Lambda</li>
+          <li>AWS RDS</li>
+          <li>Docker</li>
+          <li>NGINX</li>
+          <li>Gunicorn</li>
+          <li>Jenkins</li>
+          <li>GitHub Actions</li>
+          <li>Redis</li>
+          <li>Celery</li>
+          <li>RabbitMQ</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>Bitbucket</li>
+          <li>Postman</li>
+          <li>Swagger</li>
+          <li>Linux</li>
+          <li>Windows</li>
+          <li>Data Structures & Algorithms</li>
+          <li>Object-Oriented Programming</li>
+          <li>System Design</li>
+          <li>CI/CD</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Selected work</p>
+        </div>
+        <div class="grid three cards">
+          <article class="card">
+            <div class="card-media gradient"></div>
+            <div class="card-body">
+              <h3>Data Management — Godfrey Phillips India Ltd.</h3>
+              <p>Designed DRF-based REST APIs, automated schedulers with Celery/Redis for reports, sync jobs, and notifications; optimized DB transactions and role-based API security.</p>
+            </div>
+            <div class="card-actions">
+              <a class="btn small" href="https://secondarysales.godfreyphillips.co" target="_blank" rel="noopener">Live</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media gradient"></div>
+            <div class="card-body">
+              <h3>Popcorn Fraud Detection System — PVR Cinemas</h3>
+              <p>Designed RESTful APIs for real-time app–dashboard communication; integrated AWS S3 for log storage; deployed fraud detection logic ensuring 99.9% data availability.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media gradient"></div>
+            <div class="card-body">
+              <h3>Automated Question Bank Generator — Hajela IAS Academy</h3>
+              <p>Django-based system to extract structured questions from PDFs into Excel; web dashboard for question management and test generation; deployed on VPS with Docker.</p>
+            </div>
+            <div class="card-actions">
+              <a class="btn small" href="https://www.hajelaias.com" target="_blank" rel="noopener">Live</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media gradient"></div>
+            <div class="card-body">
+              <h3>Sentiment Analysis System (Personal Project)</h3>
+              <p>Built with scikit-learn, Pandas, and NLTK to classify reviews; served via Django REST API; React.js frontend for real-time predictions and analytics dashboard.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="section container">
+        <div class="section-header">
+          <h2>Education</h2>
+          <p>Academic background</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>B.Tech., Computer Science & Engineering — RGPV University, Bhopal</h3>
+              <p class="meta">Aug 2018 — Jul 2022 • CGPA: 7.83/10</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Higher Secondary Education — Govt. H.S. School, Biaora</h3>
+              <p class="meta">Class 12th (PCM) • Jun 2017 — May 2018 • 73.66%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>High School Education — Govt. H.S. School, Biaora</h3>
+              <p class="meta">Class 10th • Jun 2015 — May 2016 • 84.66%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section container">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p>~3 Years</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Software Engineer — Triazine Software Pvt. Ltd., Noida</h3>
+              <p class="meta">Nov 2024 — Present</p>
+              <ul>
+                <li>Developed and implemented software solutions to enhance UX and efficiency.</li>
+                <li>Collaborated with cross-functional teams to define requirements and deliverables.</li>
+                <li>Resolved defects to improve reliability and performance.</li>
+                <li>Contributed to system architecture discussions aligning tech with business goals.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Fullstack Developer — Hajela IAS Academy, Bhopal</h3>
+              <p class="meta">Mar 2024 — Oct 2024</p>
+              <ul>
+                <li>Analyzed requirements and translated them into technical specifications.</li>
+                <li>Optimized database queries, significantly reducing response times.</li>
+                <li>Built and integrated Python applications and internal APIs.</li>
+                <li>Implemented API integrations across the organization’s ecosystem.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Django Developer — Umpteen Innovation, Bhopal</h3>
+              <p class="meta">Jan 2023 — Feb 2024</p>
+              <ul>
+                <li>Developed and maintained scalable web applications using Django.</li>
+                <li>Implemented RESTful APIs to enhance data exchange efficiency.</li>
+                <li>Built user-friendly forms with validation and error handling.</li>
+                <li>Created optimized, cross-browser-compatible landing pages.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="activities" class="section container">
+        <div class="section-header">
+          <h2>Activities</h2>
+          <p>Beyond work</p>
+        </div>
+        <ul class="chips">
+          <li>25+ Stack Overflow answers; top contributor (Python)</li>
+          <li>Hackathons and coding challenges on HackerRank/DevPost</li>
+          <li>Active learner in AI/ML and backend optimization</li>
+        </ul>
+      </section>
+
+      <section id="leadership" class="section container">
+        <div class="section-header">
+          <h2>Leadership</h2>
+          <p>Initiatives and impact</p>
+        </div>
+        <ul class="chips">
+          <li>Led knowledge-sharing sessions on Django, DRF, FastAPI, and AWS</li>
+          <li>Automated operational data reports and scheduled APIs (↑ efficiency by ~30%)</li>
+          <li>Active in project planning and backend architecture strategy</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Let's work together</p>
+        </div>
+        <div class="grid two">
+          <div>
+            <p>
+              Interested in collaborating or have a project in mind? Send me a message and I'll get back to you soon.
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:kamleshlovewanshi2025@gmail.com">kamleshlovewanshi2025@gmail.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+918823857525">+91 88238 57525</a></li>
+              <li><strong>Location:</strong> Sector 62, Noida, Uttar Pradesh, India</li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kamlesh-lovewanshi" target="_blank" rel="noopener">kamlesh-lovewanshi</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/lovewanshik2000" target="_blank" rel="noopener">lovewanshik2000</a></li>
+            </ul>
+          </div>
+          <form class="contact-form" action="mailto:kamleshlovewanshi2025@gmail.com" method="post" enctype="text/plain">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Kamlesh Lovewanshi. All rights reserved.</p>
+        <a href="#top" class="to-top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
