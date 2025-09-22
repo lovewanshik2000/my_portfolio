@@ -30,6 +30,18 @@
 
   themeToggle?.addEventListener('click', toggleTheme);
 
+  // Ensure mobile menu is closed on load
+  function ensureMenuClosed() {
+    if (!mobileMenu) return;
+    if (!mobileMenu.hasAttribute('hidden')) mobileMenu.setAttribute('hidden', '');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('show');
+    body.classList.remove('menu-open');
+  }
+  ensureMenuClosed();
+  // Also close when page is restored from bfcache (mobile Safari/Chrome)
+  window.addEventListener('pageshow', ensureMenuClosed);
+
   // Header shadow when scrolled
   const onScroll = () => {
     if (!header) return;
